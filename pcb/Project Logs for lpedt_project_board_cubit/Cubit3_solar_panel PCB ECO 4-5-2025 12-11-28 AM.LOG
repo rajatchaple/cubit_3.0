@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=NetH6_1 Pin=H6-1
+Removed Pin From Net: NetName=NetH6_2 Pin=H6-2
+Removed Member From Class: ClassName=solar_cell Member=H6
+Added Pin To Net: NetName=NetH6_1 Pin=H9-V+
+Added Pin To Net: NetName=NetH6_2 Pin=H9-V-
+Change Net Name : Old Net Name=NetH6_1 New Net Name=NetH9_V+
+Change Net Name : Old Net Name=NetH6_2 New Net Name=NetH9_V-

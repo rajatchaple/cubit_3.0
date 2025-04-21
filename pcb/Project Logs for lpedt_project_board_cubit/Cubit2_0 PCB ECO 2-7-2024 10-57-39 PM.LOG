@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=US0_RX Pin=LED2-C
+Removed Pin From Net: NetName=US0_TX Pin=LED3-C
+Removed Pin From Net: NetName=+3V2_VMCU Pin=R14-1
+Removed Pin From Net: NetName=+3V2_VMCU Pin=R15-1
+Removed Member From Class: ClassName=efr32_ioport Member=LED2
+Removed Member From Class: ClassName=efr32_ioport Member=LED3
+Removed Member From Class: ClassName=efr32_ioport Member=R14
+Removed Member From Class: ClassName=efr32_ioport Member=R15
+Added Member To Class: ClassName=power_management Member=Component C27 10nF 50V
+Added Member To Class: ClassName=power_management Member=Component R19 10M 1%
+Added Member To Class: ClassName=power_management Member=Component R20 2M 1%
+Added Member To Class: ClassName=power_management Member=Component R22 7.87M 1%
+Added Member To Class: ClassName=power_management Member=Component R28 7.32M 1%
+Added Member To Class: ClassName=power_management Member=Component R29 1.43M 1%
+Added Member To Class: ClassName=power_management Member=Component R30 8.06M 1%
+Added Member To Class: ClassName=power_management Member=Component R32 5.62M 1%
+Added Member To Class: ClassName=power_management Member=Component R33 7.32M 1%
+Added Member To Class: ClassName=power_management Member=Component R34 4.87M 1%
+Added Member To Class: ClassName=power_management Member=Component R36 4.42M 1%
+Added Room: Name=Mag_Enc_Sensors_muxed

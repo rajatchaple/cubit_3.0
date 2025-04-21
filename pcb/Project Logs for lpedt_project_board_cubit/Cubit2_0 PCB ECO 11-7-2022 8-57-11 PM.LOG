@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=MAG_ENC1_PW Pin=R39-1
+Removed Pin From Net: NetName=MAG_ENC2_PW Pin=R41-1
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=R39
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=R41
+Added Pin To Net: NetName=MAG_ENC1_PW Pin=LED11-A
+Added Pin To Net: NetName=MAG_ENC2_PW Pin=LED12-A
+Added Room: Name=Mag_Enc_Sensors_muxed

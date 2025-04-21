@@ -1,0 +1,18 @@
+Change Component Comment : Designator=U10 Old Comment=AS5147P New Comment=AS5047D-ATSM
+Change Component Comment : Designator=U11 Old Comment=AS5147P New Comment=AS5047D-ATSM
+Change component parameters: Designator = "U10" ("U10"); Footprint = "14-TSOP_5x4_4"; UniqueID = "\GKTAEGOC" ("\GKTAEGOC")
+Change component parameters (AddParameter): Name = "Category"; Value = "Uncategorized"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Osram"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "AS5047D-ATSM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=9.40000, 5=8.25000, 10=7.42500, 25=6.60000, 50=6.10500, 100=5.28000 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "16475"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U11" ("U11"); Footprint = "14-TSOP_5x4_4"; UniqueID = "\RKLLLQFG" ("\RKLLLQFG")
+Change component parameters (AddParameter): Name = "Category"; Value = "Uncategorized"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Osram"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "AS5047D-ATSM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=9.40000, 5=8.25000, 10=7.42500, 25=6.60000, 50=6.10500, 100=5.28000 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "16475"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"

@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=US2_TX Pin=U7-1
+Removed Pin From Net: NetName=US2_RX Pin=U7-2
+Removed Pin From Net: NetName=ULTSEN_PWR Pin=U7-3
+Removed Pin From Net: NetName=GND Pin=U7-4
+Removed Member From Class: ClassName=ultrasonic_imu_sensor Member=U7
+Add Component: Footprint Not Found 4_PIN_ultrasonic_sensor
+Add Pin To Net: Unknown Pin: Pin U2-1
+Add Pin To Net: Unknown Pin: Pin U2-2
+Add Pin To Net: Unknown Pin: Pin U2-3
+Add Pin To Net: Unknown Pin: Pin U2-4
+Add Class Member: Failed to add class member : Component U2 Ultrasonic Sensor
+Added Room: Name=Mag_Enc_Sensors_muxed

@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=BRD_Reset Pin=SW5-2
+Removed Pin From Net: NetName=NetR18_2 Pin=SW5-3
+Removed Pin From Net: NetName=NetR18_2 Pin=SW5-4
+Change Component Footprint: Designator=SW5 Old Footprint=SW_TL3301DF160QG New Footprint=Reset Sw
+Change Component Comment : Designator=SW5 Old Comment=TL3301DF160QG New Comment=Switch
+Change Component Designator: OldDesignator=SW5 NewDesignator=SW2
+Change component parameters: Designator = "SW5" ("SW2"); Footprint = "SW_TL3301DF160QG"; UniqueID = "\RLIDIZFN" ("\RLIDIZFN")
+Change component parameters (AddParameter): Name = "Category"; Value = "Tactile Switches"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "ITT C&K"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "PTS636SL43SMTRLFS"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=0.19, 10=0.187, 25=0.1776, 100=0.1616, 250=0.15192, 500=0.13898 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "11938"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetR18_2 Pin=SW2-2

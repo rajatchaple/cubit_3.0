@@ -1,0 +1,55 @@
+Removed Pin From Net: NetName=SW_GO_S Pin=TP1-1
+Removed Pin From Net: NetName=SW_BACK_S Pin=TP1-2
+Removed Pin From Net: NetName=SW_DOWN_S Pin=TP1-3
+Removed Pin From Net: NetName=SW_UP_S Pin=TP1-4
+Removed Pin From Net: NetName=+3V2_VMCU_S Pin=TP2-1
+Removed Pin From Net: NetName=GND Pin=TP2-2
+Removed Pin From Net: NetName=+3V2_VMCU Pin=TP4-1
+Removed Pin From Net: NetName=GND Pin=TP4-2
+Removed Pin From Net: NetName=SW_UP_S Pin=U2-1
+Removed Pin From Net: NetName=GND Pin=U2-2
+Removed Pin From Net: NetName=SW_BACK_S Pin=U2-3
+Removed Pin From Net: NetName=SW_DOWN_S Pin=U2-4
+Removed Pin From Net: NetName=SW_GO_S Pin=U2-5
+Removed Pin From Net: NetName=Test_Pin Pin=U3-19
+Removed Pin From Net: NetName=GND Pin=U14-5
+Removed Pin From Net: NetName=GND Pin=U14-6
+Removed Pin From Net: NetName=VMCU Pin=U14-16
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=TP1
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=TP2
+Removed Member From Class: ClassName=efr32_ioport Member=TP3
+Removed Member From Class: ClassName=efr32_ioport Member=TP4
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=U2
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=U14
+Added Pin To Net: NetName=SW_GO_S Pin=U3-25
+Added Pin To Net: NetName=SW_BACK_S Pin=U3-26
+Added Pin To Net: NetName=SW_DOWN_S Pin=U3-27
+Added Pin To Net: NetName=SW_UP_S Pin=U3-28
+Added Pin To Net: NetName=Test_Pin Pin=U3-44
+Change Net Name : Old Net Name=MAG_ENC1_CS New Net Name=MAG_ENC_W_CS
+Change Net Name : Old Net Name=MAG_ENC1_PW New Net Name=MAG_ENC_W_PW
+Change Net Name : Old Net Name=MAG_ENC2_CS New Net Name=MAG_ENC_P_CS
+Change Net Name : Old Net Name=MAG_ENC2_PW New Net Name=MAG_ENC_P_PW
+Change Net Name : Old Net Name=SW_BACK_S New Net Name=SW_BACK
+Change Net Name : Old Net Name=SW_DOWN_S New Net Name=SW_DOWN
+Change Net Name : Old Net Name=SW_GO_S New Net Name=SW_GO
+Change Net Name : Old Net Name=SW_UP_S New Net Name=SW_UP
+Added Pin To Net: NetName=MAG_ENC_P_A Pin=U3-23
+Added Pin To Net: NetName=MAG_ENC_P_A Pin=U11-7
+Added Net: Name=MAG_ENC_P_A
+Added Pin To Net: NetName=MAG_ENC_P_B Pin=U3-24
+Added Pin To Net: NetName=MAG_ENC_P_B Pin=U11-6
+Added Net: Name=MAG_ENC_P_B
+Added Pin To Net: NetName=MAG_ENC_P_SW Pin=U3-22
+Added Pin To Net: NetName=MAG_ENC_P_SW Pin=U13-4
+Added Net: Name=MAG_ENC_P_SW
+Added Pin To Net: NetName=MAG_ENC_W_A Pin=U3-20
+Added Pin To Net: NetName=MAG_ENC_W_A Pin=U10-7
+Added Net: Name=MAG_ENC_W_A
+Added Pin To Net: NetName=MAG_ENC_W_B Pin=U3-21
+Added Pin To Net: NetName=MAG_ENC_W_B Pin=U10-6
+Added Net: Name=MAG_ENC_W_B
+Added Pin To Net: NetName=MAG_ENC_W_SW Pin=U3-19
+Added Pin To Net: NetName=MAG_ENC_W_SW Pin=U12-4
+Added Net: Name=MAG_ENC_W_SW
+Added Room: Name=Mag_Enc_Sensors_muxed

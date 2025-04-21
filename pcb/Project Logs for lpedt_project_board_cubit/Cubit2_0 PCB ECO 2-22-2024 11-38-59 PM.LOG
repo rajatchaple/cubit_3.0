@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=U7 Old Footprint=4_PIN_100MIL New Footprint=4_PIN_ultrasonic_sensor
+Change Component Footprint: Designator=C36 Old Footprint=CAP_0805_02X125 New Footprint=CAP_0603_1MM
+Change Component Footprint: Designator=C37 Old Footprint=CAP_0805_02X125 New Footprint=CAP_0603_1MM
+Change Component Description : Designator=C36 Old Description=Cap Ceramic 0.1uF 16V X7R 10% SMD 0805 125°C Paper T/R New Description=Cap Ceramic 0.1uF 16V X7R 10% SMD 0603 125°C Paper T/R
+Change Component Description : Designator=C37 Old Description=Cap Ceramic 0.1uF 16V X7R 10% SMD 0805 125°C Paper T/R New Description=Cap Ceramic 0.1uF 16V X7R 10% SMD 0603 125°C Paper T/R
+Added Member To Class: ClassName=ultrasonic_imu_sensor Member=Component U7 Ultrasonic Sensor
+Added Room: Name=Mag_Enc_Sensors_muxed

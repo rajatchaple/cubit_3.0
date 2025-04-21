@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=SW_UP Pin=U3-25
+Removed Pin From Net: NetName=SW_DOWN Pin=U3-27
+Added Pin To Net: NetName=SW_DOWN Pin=U3-25
+Added Pin To Net: NetName=SW_UP Pin=U3-27
+Change Net Name : Old Net Name=SW_DOWN New Net Name=SW_UP
+Change Net Name : Old Net Name=SW_UP New Net Name=SW_DOWN

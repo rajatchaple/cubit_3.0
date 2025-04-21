@@ -1,0 +1,494 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD22\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">4/6/2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:22:03 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc" class="file"><acronym title="C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc">C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">42</td></tr>
+</table>
+</td>
+</table><a name="IDOSQVEKD1QS0WS3CUTPMTRKHYKDDOYHY5SY3O1MMNYTZG3PYO44"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSBGDVBEX21T4LTGGBQ3NM3G02DLY1IKLXM2BXLG31WXYVJ3KLCND">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTSGFPZY4DVZ3JCWFRZDBKU14AMSK4YWZK3LIEVMSFKZAHZVZQRML">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGOQVQPFCUYKBFLRFI10SGWWYBHO1NIERGTAVXRDL0G0Q3HF35MYE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1FPF4QHUPJ4LDVX5O22ZBW0CNKJRQFNSPI3WVXFWRUST1OIJIGHC">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWJOSHW1GWE1RHCSJCJBAZOI1UIASXHJ0U5KWP2I2Z3MSPMBFG4AD">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('LBUCK'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0TP43JDK0MT3C44ETQHAANYR0D3NOTVWIIMIEAKLZSYWGH1HWJDN">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('VIN_DC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY0AXFZSSGGRNFA20ZPECCR4N5GRSMR0R3XSTXQMTYVHL1HXIBSKE">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('+5V_VBUS'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUMMGZXYNIMNTG1KO5EQDWQ1UZOEM5PODISXMHGE2H0XIEZY5IVVN">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.203mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWML53RWQ45IWP44S21WPLAJID0BQCBHHLPW05CRKGPUWO0HZQEG">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('LBOOST'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGQU5AONHCAKNIYOIYLWR4QPMBCKUASYXSSISX5COFTNPG4V4JD5H">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('NetD1_A'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRDYKC1GW3ERCCS43AHKJF0H2TCDPNKXFMMBJRTOKOE0JDRDFBYHC">Width Constraint (Min=0.508mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('NetH6_2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5YINBPRR25NVFNCOMVQC5KNBPJKJXBN2OE2ZGQ3HWTZ3CNTRZ">Width Constraint (Min=0.508mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('NetH6_1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3M0L5VT0BU5JKU34V2LUMDM1YI5IMS0BL3DFIUK2F3DDM2ADMYVH">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('VOUT'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1QI1G33DWVNQKSK14Y3Z2QGFBGLZJZTWEI4GPKPPMM5K1H1OK01G">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('+3V7_VBAT'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEDZG3COWRG2AGKG03SWMESKCQPEAGJROORYFNWONBSM03G4YRSQI">Width Constraint (Min=0.152mm) (Max=2.54mm) (Preferred=0.508mm) (InNet('+3V2_VMCU'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJKC51P3IOCKBLY1CSCUC53YHWJ0SQBSTSMIVMVK0L43I25NO3UXN">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWIT5XGCX34L0CNMIIFRSEH2KWKWXUJKWWD21KGJFFOL41MTZ4I5H">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDX2XOL0C2NTJ0BPDRJ42FGXF0LCLIH0HTHD4H52IRTN4YUMBJIUPP">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS3SQJWU3M2RHJ0BYA0PIT1SKQNZYFLDTJT4KFK2RU3R2RTI4WLH">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSWQYV3Q0202LK1BUJZC0EC1VZKU4JHGT1OVLM5JAK51QMUG1ZVTI">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">42</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID25LKSLVIRZC3J23OLWSCS41XVN3MJRAJLPQ5ZQOMUEYC531ENXQJ">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID414W5UDMEY2KBRVTOE4440K5YK4M3IO3X3RVZXJMJN0JHVYIRZ0D">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEWHCYU1TCPT2HUZJXF23CZVTYKXT0EGPC50RVLNDFDQZ2S3CV4WI">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">42</td>
+</tr>
+</table><br><a name="IDSWQYV3Q0202LK1BUJZC0EC1VZKU4JHGT1OVLM5JAK51QMUG1ZVTI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3576.375mil|Location2.X=3587.625mil|Location1.Y=3403.823mil|Location2.Y=3415.073mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3576.375mil|Location2.X=3587.625mil|Location1.Y=3403.823mil|Location2.Y=3415.073mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.228mm &lt; 0.254mm) Between Pad H9-V-(5.055mm,60.578mm) on Bottom Layer And Track (5.08mm,61.39mm)(7.493mm,61.39mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.228mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3590.377mil|Location2.X=3601.627mil|Location1.Y=3369.321mil|Location2.Y=3380.571mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3590.377mil|Location2.X=3601.627mil|Location1.Y=3369.321mil|Location2.Y=3380.571mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.203mm &lt; 0.254mm) Between Pad H9-V-(5.055mm,60.578mm) on Bottom Layer And Track (7.493mm,59.485mm)(7.493mm,61.39mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.203mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S10-V-(48.562mm,62.47mm) on Top Layer And Track (44.562mm,40.32mm)(44.562mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S10-V-(48.562mm,62.47mm) on Top Layer And Track (52.562mm,40.32mm)(52.562mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S10-V+(48.562mm,41.67mm) on Top Layer And Track (44.562mm,40.32mm)(44.562mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S10-V+(48.562mm,41.67mm) on Top Layer And Track (52.562mm,40.32mm)(52.562mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S1-V-(9.042mm,37.095mm) on Top Layer And Track (13.042mm,14.945mm)(13.042mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S1-V-(9.042mm,37.095mm) on Top Layer And Track (5.042mm,14.945mm)(5.042mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S1-V+(9.042mm,16.295mm) on Top Layer And Track (13.042mm,14.945mm)(13.042mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S1-V+(9.042mm,16.295mm) on Top Layer And Track (5.042mm,14.945mm)(5.042mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S2-V-(9.042mm,62.47mm) on Top Layer And Track (13.042mm,40.32mm)(13.042mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S2-V-(9.042mm,62.47mm) on Top Layer And Track (5.042mm,40.32mm)(5.042mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3808.7mil|Location2.X=3819.95mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S2-V+(9.042mm,41.67mm) on Top Layer And Track (13.042mm,40.32mm)(13.042mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3508.05mil|Location2.X=3519.3mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S2-V+(9.042mm,41.67mm) on Top Layer And Track (5.042mm,40.32mm)(5.042mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S3-V-(18.922mm,26.935mm) on Top Layer And Track (14.922mm,4.785mm)(14.922mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S3-V-(18.922mm,26.935mm) on Top Layer And Track (22.922mm,4.785mm)(22.922mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S3-V+(18.922mm,6.135mm) on Top Layer And Track (14.922mm,4.785mm)(14.922mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S3-V+(18.922mm,6.135mm) on Top Layer And Track (22.922mm,4.785mm)(22.922mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S4-V-(18.922mm,52.349mm) on Top Layer And Track (14.922mm,30.199mm)(14.922mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S4-V-(18.922mm,52.349mm) on Top Layer And Track (22.922mm,30.199mm)(22.922mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3897.025mil|Location2.X=3908.275mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S4-V+(18.922mm,31.549mm) on Top Layer And Track (14.922mm,30.199mm)(14.922mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4197.675mil|Location2.X=4208.925mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S4-V+(18.922mm,31.549mm) on Top Layer And Track (22.922mm,30.199mm)(22.922mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S5-V-(28.802mm,37.095mm) on Top Layer And Track (24.802mm,14.945mm)(24.802mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S5-V-(28.802mm,37.095mm) on Top Layer And Track (32.802mm,14.945mm)(32.802mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S5-V+(28.802mm,16.295mm) on Top Layer And Track (24.802mm,14.945mm)(24.802mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S5-V+(28.802mm,16.295mm) on Top Layer And Track (32.802mm,14.945mm)(32.802mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S6-V-(28.802mm,62.47mm) on Top Layer And Track (24.802mm,40.32mm)(24.802mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=3414.454mil|Location2.Y=3425.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S6-V-(28.802mm,62.47mm) on Top Layer And Track (32.802mm,40.32mm)(32.802mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4286mil|Location2.X=4297.25mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S6-V+(28.802mm,41.67mm) on Top Layer And Track (24.802mm,40.32mm)(24.802mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.65mil|Location2.X=4597.9mil|Location1.Y=2595.556mil|Location2.Y=2606.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S6-V+(28.802mm,41.67mm) on Top Layer And Track (32.802mm,40.32mm)(32.802mm,63.82mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S7-V-(38.682mm,26.935mm) on Top Layer And Track (34.682mm,4.785mm)(34.682mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=2015.454mil|Location2.Y=2026.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S7-V-(38.682mm,26.935mm) on Top Layer And Track (42.682mm,4.785mm)(42.682mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S7-V+(38.682mm,6.135mm) on Top Layer And Track (34.682mm,4.785mm)(34.682mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=1196.556mil|Location2.Y=1207.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S7-V+(38.682mm,6.135mm) on Top Layer And Track (42.682mm,4.785mm)(42.682mm,28.285mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S8-V-(38.682mm,52.349mm) on Top Layer And Track (34.682mm,30.199mm)(34.682mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=3016.005mil|Location2.Y=3027.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S8-V-(38.682mm,52.349mm) on Top Layer And Track (42.682mm,30.199mm)(42.682mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4674.975mil|Location2.X=4686.225mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S8-V+(38.682mm,31.549mm) on Top Layer And Track (34.682mm,30.199mm)(34.682mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4975.625mil|Location2.X=4986.875mil|Location1.Y=2197.107mil|Location2.Y=2208.357mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S8-V+(38.682mm,31.549mm) on Top Layer And Track (42.682mm,30.199mm)(42.682mm,53.699mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S9-V-(48.562mm,37.095mm) on Top Layer And Track (44.562mm,14.945mm)(44.562mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=2415.454mil|Location2.Y=2426.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S9-V-(48.562mm,37.095mm) on Top Layer And Track (52.562mm,14.945mm)(52.562mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.95mil|Location2.X=5075.2mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S9-V+(48.562mm,16.295mm) on Top Layer And Track (44.562mm,14.945mm)(44.562mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\rajat\OneDrive\Low Power\cubit_3.0\pcb\Cubit3_solar_panel.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5364.6mil|Location2.X=5375.85mil|Location1.Y=1596.556mil|Location2.Y=1607.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad S9-V+(48.562mm,16.295mm) on Top Layer And Track (52.562mm,14.945mm)(52.562mm,38.445mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,21 @@
+Change Footprint: Cannot match pads with new footprint in component :L5 Footprint:INDP2523X23N
+Change Component Comment : Designator=L5 Old Comment=4.7uH 1.2A New Comment=4.7 µH 1.55A
+Change component parameters: Designator = "L5" ("L5"); Footprint = "2_IND_32X25"; UniqueID = "\QNBIVKQU" ("\QNBIVKQU")
+Change component parameters (AddParameter): Name = "Category"; Value = "Fixed Inductors"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/MIDC/MIDC-S-A0007978246/MIDC-S-A0007978253-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/MIDC/MIDC-S-A0007978246/MIDC-S-A0007978253-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/2618741.pdf?src-supplier=Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/2618741.pdf?src-supplier=Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3Description"; Value = "https://katalog.we-online.de/pbs/datasheet/74404041047.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3URL"; Value = "https://katalog.we-online.de/pbs/datasheet/74404041047.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink4Description"; Value = "http://www.farnell.com/datasheets/2618741.pdf?src-supplier=Newark"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink4URL"; Value = "http://www.farnell.com/datasheets/2618741.pdf?src-supplier=Newark"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Inductor Type"; Value = "GENERAL PURPOSE INDUCTOR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Wurth Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "74404041047"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=1.2, 50=1.098, 250=1.003, 500=0.932, 1000=0.74 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Reach SVHC Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "10445"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"

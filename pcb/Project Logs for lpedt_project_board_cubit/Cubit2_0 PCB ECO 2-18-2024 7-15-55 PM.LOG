@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=GND Pin=MH9-1
+Removed Pin From Net: NetName=GND Pin=MH10-1
+Removed Pin From Net: NetName=GND Pin=MH11-1
+Removed Pin From Net: NetName=GND Pin=MH12-1
+Removed Pin From Net: NetName=GND Pin=MH13-1
+Removed Pin From Net: NetName=GND Pin=MH14-1
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=MH9
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=MH10
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=MH11
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=MH12
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=MH13
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=MH14
+Added Member To Class: ClassName=power_management Member=Component H2 Battery Connector
+Added Room: Name=Mag_Enc_Sensors_muxed

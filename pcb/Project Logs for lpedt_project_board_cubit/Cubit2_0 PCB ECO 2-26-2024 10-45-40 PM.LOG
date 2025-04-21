@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=MH17-1
+Removed Member From Class: ClassName=Mag_Enc_Sensors_muxed Member=MH17
+Added Component: Designator=MH1(HOLE_#4)
+Added Component: Designator=MH2(HOLE_#4)
+Added Member To Class: ClassName=Mag_Enc_Sensors_muxed Member=Component MH1 #4_Hole
+Added Member To Class: ClassName=Mag_Enc_Sensors_muxed Member=Component MH2 #4_Hole

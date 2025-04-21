@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=GND Pin=C1-2
+Removed Pin From Net: NetName=+3V2_VMCU Pin=C2-1
+Removed Pin From Net: NetName=GND Pin=C2-2
+Removed Pin From Net: NetName=GND Pin=R1-2
+Removed Pin From Net: NetName=GND Pin=U1-2
+Removed Pin From Net: NetName=LCD_SW Pin=U1-4
+Removed Pin From Net: NetName=+3V2_VMCU Pin=U1-5
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=C1
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=C2
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=LED1
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=R1
+Removed Member From Class: ClassName=efr32_lcd_hmi Member=U1
+Added Pin To Net: NetName=+3V2_VMCU Pin=LCD1-1

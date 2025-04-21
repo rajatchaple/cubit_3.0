@@ -1,0 +1,3 @@
+Change Footprint: Footprint Not Found BAT_CONN_NO_BODY
+Change component parameters: Designator = "H2" ("H2"); Footprint = "BAT_CONN"; UniqueID = "\GOFJDROW" ("\GOFJDROW")
+Added Member To Class: ClassName=power_management Member=Component H2 Battery connector

@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=SOLAR_IN Pin=R24-1
+Removed Pin From Net: NetName=VIN_DC Pin=R24-2
+Removed Member From Class: ClassName=power_management Member=R24

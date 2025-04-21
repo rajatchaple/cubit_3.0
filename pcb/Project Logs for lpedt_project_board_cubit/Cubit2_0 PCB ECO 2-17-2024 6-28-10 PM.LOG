@@ -1,0 +1,3 @@
+Change Footprint: Footprint Not Found BAT_CONN_NO_BODY
+Added Member To Class: ClassName=power_management Member=Component H2 Battery Connector
+Added Room: Name=Mag_Enc_Sensors_muxed

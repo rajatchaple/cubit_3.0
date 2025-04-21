@@ -1,0 +1,6 @@
+Added Component: Designator=U7(4_PIN_100MIL)
+Added Pin To Net: NetName=US2_TX Pin=U7-1
+Added Pin To Net: NetName=US2_RX Pin=U7-2
+Added Pin To Net: NetName=ULTSEN_PWR Pin=U7-3
+Added Pin To Net: NetName=GND Pin=U7-4
+Added Member To Class: ClassName=ultrasonic_imu_sensor Member=Component U7 Ultrasonic Sensor
