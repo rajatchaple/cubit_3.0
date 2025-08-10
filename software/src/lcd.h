@@ -31,7 +31,7 @@
 
 #include "ble_device_type.h"
 #include "gpio.h"
-
+#include "lcd_bitmap.h"
 #include "glib.h" // the low-level graphics driver/library
 #include "dmd.h"  // the dot matrix display driver
 
@@ -72,14 +72,17 @@ enum display_row {
 void displayInit();
 void displayUpdate();
 void displayPrintf(enum display_row row, const char *format, ...);
-void displayUnit(enum display_row row, const char *format, ...);
+//void displayUnit(enum display_row row, const char *format, ...);
+void drawImage(const ImageBitmap* image, int X_off, int Y_off);
 
 //void draw_custom_graphics(GLIB_Context_t *pContext);
 void draw_custom_graphics(const char* screen, int rectangle_number);
 char* reverse(char *s);
 //void draw_custom_graphics_rectangle(int);
-void clear_display(void);
-
-
+void clear_menu_top_display(void);
+void clearImage();
+void clear_menu_arrow();
+void display_reading(int number, bool large_digits_only);
+void clear_image(const ImageBitmap* image, int X_off, int Y_off);
 
 #endif /* SRC_LCD_H_ */

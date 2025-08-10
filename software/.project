@@ -1056,11 +1056,6 @@
 			<locationURI>STUDIO_SDK_LOC/platform/Device/SiliconLabs/EFR32BG13P/Source/system_efr32bg13p.c</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_3.2.3/platform/middleware/glib/dmd/display/dmd_memlcd.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/middleware/glib/dmd/display/dmd_memlcd.c</locationURI>
-		</link>
-		<link>
 			<name>gecko_sdk_3.2.3/platform/radio/rail_lib/autogen/librail_release/librail_efr32xg13_gcc_release.a</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/radio/rail_lib/autogen/librail_release/librail_efr32xg13_gcc_release.a</locationURI>

@@ -52,6 +52,7 @@
 //#define IMU_SENSOR
 #define ULTRASONIC_SENSOR
 
+bool gpio_inputs_enabled = false;
 
 /*****************************************************************************
  * Application Power Manager callbacks
@@ -134,8 +135,11 @@ SL_WEAK void app_init(void)
   gpioInit();
 
   //Setting sensors off by default
-  gpioMagEncSetOff();
+  gpioMagEncPSetOff();
+  gpioMagEncWSetOff();
   gpioUltrasonicSetOff();
+
+
 
   displayInit();
 
@@ -144,10 +148,15 @@ SL_WEAK void app_init(void)
 
 
   i2c_init();
+
+
+
+//  displayUpdate();
   //initialize timer
   mytimer_init();
   imu_turnoff_state_machine(evt_NoEvent);
 
+//  timerWaitUs_polled(100000);
 //
 //  //enable interrupt for LETIMER0 in NVIC
   NVIC_ClearPendingIRQ(LETIMER0_IRQn);
@@ -157,10 +166,20 @@ SL_WEAK void app_init(void)
   NVIC_ClearPendingIRQ(GPIO_ODD_IRQn);
   NVIC_EnableIRQ(GPIO_ODD_IRQn);
 
-  draw_custom_graphics(CU, NO_RECTANGLE);
+  gpio_inputs_enabled = true;
+  init_lcd_menu();
+//  draw_custom_graphics(CU, NO_RECTANGLE);
+//  draw_custom_graphics(LCD_screens_cubit2, NO_RECTANGLE);
+
 //  handle_lcd_menus(evt_NoEvent);
 //  draw_custom_graphics(Slide1);
 //  draw_custom_graphics_rectangle(Slide2);
+//  gpioMagEncWSetOn();
+//  gpioMagEncPSetOn();
+  while(getNextEvent() == 0)
+    {
+      uint32_t event = getNextEvent();
+    }
 }
 
 
@@ -170,15 +189,15 @@ SL_WEAK void app_init(void)
 // * comment out this function. Wait loops are a bad idea in general.
 // * We'll discuss how to do this a better way in the next assignment.
 // *****************************************************************************/
-//static void delayApprox(int delay)
-//{
-//  volatile int i;
-//
-//  for (i = 0; i < delay; ) {
-//      i=i+1;
-//  }
-//
-//} // delayApprox()
+static void delayApprox(int delay)
+{
+  volatile int i;
+
+  for (i = 0; i < delay; ) {
+      i=i+1;
+  }
+
+} // delayApprox()
 
 
 /**************************************************************************//**
@@ -196,7 +215,20 @@ SL_WEAK void app_process_action(void)
   uint32_t evt;
   sensor_data_t* sensor_data =  get_sensor_data();
 
+//  gpioTestLedSetOff();
+//  delayApprox(3500000);
+//  gpioTestLedSetOn();
+//  delayApprox(3500000);
 //  gpioSetDisplayExtcomin(false);
+
+
+//  gpioTestLedSetOn();
+
+//  gpioMagEncWSetOn();
+//  gpioMagEncPSetOn();
+//    gpioMagEncWSetOn();
+
+
 
   evt = getNextEvent();         //get event to be executed from scheduler
     if((evt == evt_Button_UP)  ||
@@ -204,7 +236,9 @@ SL_WEAK void app_process_action(void)
         (evt == evt_Button_BACK)  ||
         (evt == evt_Button_SELECT))
       {
+//        gpioTestLedSetOn();
         handle_lcd_menus(evt);
+//        gpioMagEncPSetOff();
       }
 
     if(sensor_data->is_angular_enabled==true && sensor_data->is_imu_initialization_complete == false)

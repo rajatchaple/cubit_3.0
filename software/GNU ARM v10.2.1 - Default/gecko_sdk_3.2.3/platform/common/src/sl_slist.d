@@ -60,8 +60,8 @@ gecko_sdk_3.2.3/platform/common/src/sl_slist.o: \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\efr32bg13p_af_pins.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_common.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/emlib_core_debug_config.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/emlib_core_debug_config.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_slist.h
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h:
@@ -123,6 +123,6 @@ c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\efr32bg13p_af_pins.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_common.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/emlib_core_debug_config.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/emlib_core_debug_config.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_slist.h:

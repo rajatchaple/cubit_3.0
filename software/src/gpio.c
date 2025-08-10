@@ -36,14 +36,30 @@ void gpioInit()
   GPIO_DriveStrengthSet(lcd_load_sw_port, gpioDriveStrengthWeakAlternateWeak);
   GPIO_PinModeSet(lcd_load_sw_port, lcd_load_sw_pin, gpioModePushPull, false);
 
-  GPIO_DriveStrengthSet(mag_enc_load_sw_port, gpioDriveStrengthWeakAlternateWeak);
-  GPIO_PinModeSet(mag_enc_load_sw_port, mag_enc_load_sw_pin, gpioModePushPull, false);
+  GPIO_DriveStrengthSet(mag_enc_P_load_sw_port, gpioDriveStrengthWeakAlternateWeak);
+  GPIO_PinModeSet(mag_enc_P_load_sw_port, mag_enc_P_load_sw_pin, gpioModePushPull, false);
+
+  GPIO_DriveStrengthSet(mag_enc_W_load_sw_port, gpioDriveStrengthWeakAlternateWeak);
+  GPIO_PinModeSet(mag_enc_W_load_sw_port, mag_enc_W_load_sw_pin, gpioModePushPull, false);
+
+  GPIO_DriveStrengthSet(MAG_ENC_MUX_PORT, gpioDriveStrengthWeakAlternateWeak);
+  GPIO_PinModeSet(MAG_ENC_MUX_PORT, MAG_ENC_MUX_PIN, gpioModePushPull, false);
 
   GPIO_DriveStrengthSet(ultrasonic_load_sw_port, gpioDriveStrengthWeakAlternateWeak);
   GPIO_PinModeSet(ultrasonic_load_sw_port, ultrasonic_load_sw_pin, gpioModePushPull, false);
 
+  GPIO_DriveStrengthSet(LASER_SW_PORT, gpioDriveStrengthWeakAlternateWeak);
+  GPIO_PinModeSet(LASER_SW_PORT, LASER_SW_PIN, gpioModePushPull, false);
+
+  GPIO_DriveStrengthSet(TEST_LED_PORT, gpioDriveStrengthWeakAlternateWeak);
+  GPIO_PinModeSet(TEST_LED_PORT, TEST_LED_PIN, gpioModePushPull, false);
+
+
 //  GPIO_DriveStrengthSet(extcom_port, gpioDriveStrengthWeakAlternateWeak);
 //  GPIO_PinModeSet(extcom_port, extcom_pin, gpioModePushPull, false);
+
+    GPIO_DriveStrengthSet(LCD_DISP_PORT, gpioDriveStrengthWeakAlternateWeak);
+    GPIO_PinModeSet(LCD_DISP_PIN, LCD_DISP_PIN, gpioModePushPull, false);
 
 //  GPIO_PinModeSet(PB0_port, PB0_pin, gpioModeInputPullFilter, true);
 //  GPIO_ExtIntConfig(PB0_port, PB0_pin, PB0_pin, true, true, true);
@@ -60,9 +76,6 @@ void gpioInit()
   GPIO_PinModeSet(SW_PORT, SW_SELECT_PIN, gpioModeInputPullFilter, true);
   GPIO_ExtIntConfig(SW_PORT, SW_SELECT_PIN, SW_SELECT_PIN, true, false, true);
 
-  GPIO_PinModeSet(SW_PORT, SW_BACK_PIN, gpioModeInputPullFilter, true);
-  GPIO_ExtIntConfig(SW_PORT, SW_BACK_PIN, SW_BACK_PIN, true, false, true);
-
   GPIO_PinModeSet(SW_PORT, SW_DOWN_PIN, gpioModeInputPullFilter, true);
   GPIO_ExtIntConfig(SW_PORT, SW_DOWN_PIN, SW_DOWN_PIN, true, false, true);
 
@@ -72,10 +85,32 @@ void gpioInit()
   GPIO_IntClear(0xFFFFFFFF);
 } // gpioInit()
 
-
-void gpioMagEncSetOff()
+void gpioTestLedSetOn()
 {
-  GPIO_PinOutSet(mag_enc_load_sw_port,mag_enc_load_sw_pin);
+  GPIO_PinOutSet(TEST_LED_PORT,TEST_LED_PIN);
+}
+
+
+void gpioTestLedSetOff()
+{
+  GPIO_PinOutClear(TEST_LED_PORT,TEST_LED_PIN);
+}
+
+void gpioUsePulleyMagEnc()
+{
+  GPIO_PinOutClear(MAG_ENC_MUX_PORT,MAG_ENC_MUX_PIN);
+}
+
+void gpioUseWheelMagEnc()
+{
+  GPIO_PinOutSet(MAG_ENC_MUX_PORT,MAG_ENC_MUX_PIN);
+}
+
+
+
+void gpioMagEncPSetOff()
+{
+  GPIO_PinOutSet(mag_enc_P_load_sw_port,mag_enc_P_load_sw_pin);
 
   //turning GPIOs off to save on power
 //  GPIO_DriveStrengthSet(mag_enc_A_port, gpioDriveStrengthWeakAlternateWeak);
@@ -88,14 +123,43 @@ void gpioMagEncSetOff()
 }
 
 
-void gpioMagEncSetOn()
+void gpioMagEncPSetOn()
 {
-  GPIO_PinOutClear(mag_enc_load_sw_port,mag_enc_load_sw_pin);
+  GPIO_PinOutClear(mag_enc_P_load_sw_port,mag_enc_P_load_sw_pin);
 
-  GPIO_PinModeSet(mag_enc_A_port, mag_enc_A_pin, gpioModeInputPullFilter, true);
+  gpioUsePulleyMagEnc();
+
+  GPIO_PinModeSet(mag_enc_A_port, mag_enc_A_pin, gpioModeInputPullFilter, false);
   GPIO_ExtIntConfig(mag_enc_A_port, mag_enc_A_pin, mag_enc_A_pin, true, true, true);
 
-  GPIO_PinModeSet(mag_enc_B_port, mag_enc_B_pin, gpioModeInputPullFilter, true);
+  GPIO_PinModeSet(mag_enc_B_port, mag_enc_B_pin, gpioModeInputPullFilter, false);
+  GPIO_ExtIntConfig(mag_enc_B_port, mag_enc_B_pin, mag_enc_B_pin, true, true, true);
+}
+
+void gpioMagEncWSetOff()
+{
+  GPIO_PinOutSet(mag_enc_W_load_sw_port,mag_enc_W_load_sw_pin);
+
+  //turning GPIOs off to save on power
+//  GPIO_DriveStrengthSet(mag_enc_A_port, gpioDriveStrengthWeakAlternateWeak);
+  GPIO_PinModeSet(mag_enc_A_port, mag_enc_A_pin, gpioModeDisabled, false);
+//  GPIO_PinOutSet(mag_enc_A_port,mag_enc_A_pin);
+
+//  GPIO_DriveStrengthSet(mag_enc_B_port, gpioDriveStrengthWeakAlternateWeak);
+  GPIO_PinModeSet(mag_enc_B_port, mag_enc_B_pin, gpioModeDisabled, false);
+//  GPIO_PinOutSet(mag_enc_B_port,mag_enc_B_pin);
+}
+
+
+void gpioMagEncWSetOn()
+{
+  GPIO_PinOutClear(mag_enc_W_load_sw_port,mag_enc_W_load_sw_pin);
+  gpioUseWheelMagEnc();
+
+  GPIO_PinModeSet(mag_enc_A_port, mag_enc_A_pin, gpioModeInputPull, true);
+  GPIO_ExtIntConfig(mag_enc_A_port, mag_enc_A_pin, mag_enc_A_pin, true, true, true);
+
+  GPIO_PinModeSet(mag_enc_B_port, mag_enc_B_pin, gpioModeInputPull, true);
   GPIO_ExtIntConfig(mag_enc_B_port, mag_enc_B_pin, mag_enc_B_pin, true, true, true);
 }
 
@@ -104,50 +168,46 @@ void gpioMagEncSetOn()
 void gpioUltrasonicSetOff()
 {
   GPIO_PinOutSet(ultrasonic_load_sw_port,ultrasonic_load_sw_pin);
-
-
+  gpioLaserSetOff();
 }
 
 
 void gpioUltrasonicSetOn()
 {
   GPIO_PinOutClear(ultrasonic_load_sw_port,ultrasonic_load_sw_pin);
-}
-
-
-void gpioLcdSetOff()
-{
-  GPIO_PinOutSet(lcd_load_sw_port,lcd_load_sw_pin);
+  gpioLaserSetOn();
 }
 
 
 void gpioLcdSetOn()
 {
-  GPIO_PinOutClear(lcd_load_sw_port,lcd_load_sw_pin);
+  GPIO_PinOutSet(LCD_DISP_PORT,LCD_DISP_PIN);
 }
 
 
-
-
-void gpioLed0SetOn()
+void gpioLcdSetOff()
 {
-  GPIO_PinOutSet(LED0_port,LED0_pin);
+  GPIO_PinOutClear(LCD_DISP_PORT,LCD_DISP_PIN);
 }
 
 
-void gpioLed0SetOff()
+void gpioLaserSetOff()
 {
-  GPIO_PinOutClear(LED0_port,LED0_pin);
+  GPIO_PinOutSet(LASER_SW_PORT,LASER_SW_PIN);
+
+
 }
 
-void enable_sensor() {
-  //GPIO_PinOutSet(sensor_port, sensor_pin);
-  GPIO_PinOutClear(sensor_port, sensor_pin);
+
+void gpioLaserSetOn()
+{
+  GPIO_PinOutClear(LASER_SW_PORT,LASER_SW_PIN);
 }
 
-void disable_sensor() {
-  GPIO_PinOutClear(sensor_port, sensor_pin);
-}
+
+
+
+
 
 void gpioSetDisplayExtcomin(bool value) {
 

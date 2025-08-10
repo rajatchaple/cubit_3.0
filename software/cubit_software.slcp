@@ -1,6 +1,6 @@
 # Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
-project_name: source_4
-label: source_4
+project_name: cubit_software
+label: cubit_software
 description: |
   The classic blinky example using Bluetooth communication. From the EFR Connect mobile app, the LED controller button toggles LED0 on the board. In addition, on the board pressing or releasing BTN0 notifies the app. This is a demonstration of a simple two-way data exchange over GATT.
 category: Bluetooth Examples
@@ -34,9 +34,9 @@ component:
 - {id: bluetooth_feature_system}
 - {id: gatt_configuration}
 - {id: device_init_lfxo}
-- {id: emlib_letimer}
 - instance: [inst]
   id: i2cspm
+- {id: emlib_letimer}
 - instance: [led0]
   id: simple_led
 - {id: emlib_leuart}

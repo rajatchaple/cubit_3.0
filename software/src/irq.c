@@ -16,6 +16,8 @@
 #include "em_usart.h"
 #include "em_leuart.h"
 #include "src/scheduler.h"
+#include "em_gpio.h"
+#include "gpio.h"
 
 extern cbfifo_t cbfifo_receive;
 extern uint32_t curr_lcd_screen;
@@ -23,6 +25,7 @@ extern uint32_t curr_lcd_screen;
 
 last_pulse_t mag_enc_last_pulse = NOT_SET;
 
+extern bool gpio_inputs_enabled;
 
 mag_enc_t mag_enc = {0, 0, NONE, NOT_SET};
 
@@ -349,53 +352,30 @@ void GPIO_EVEN_IRQHandler(void)
   //PD14 MAG ENC B reason 16384
 
 
-   if(reason_even == 16384) //Mag Enc Channel
-    {
-      CORE_DECLARE_IRQ_STATE;
-       CORE_ENTER_CRITICAL();
-      //setting initial direction of rotation
-      if(mag_enc.rotation_direction == NONE)
-        {
-          mag_enc.rotation_direction = CLK_WISE;
-        }
 
-      //checking if direction of rotation is changed
-      if(mag_enc.last_pulse == CHNL_A)
-        {
-          //change rotation direction;
-          if(mag_enc.rotation_direction == CLK_WISE)
-            mag_enc.rotation_direction = COUNTER_CLK_WISE;
-          else if(mag_enc.rotation_direction == COUNTER_CLK_WISE)
-            mag_enc.rotation_direction = CLK_WISE;
-        }
-      mag_enc.last_pulse = CHNL_A;
-
-      if(curr_lcd_screen != LCD_WHEEL_MEAS)
-      {
-          if(mag_enc.rotation_direction == CLK_WISE)
-            mag_enc.clkwise_counter++;
-          else if(mag_enc.rotation_direction == COUNTER_CLK_WISE)
-            mag_enc.counter_clkwise_counter++;
-      }
-      else
-      {
-          mag_enc.clkwise_counter++;
-      }
-
-
-      CORE_EXIT_CRITICAL();
-
-    }
    //check if the interrupt triggered was from PB1
-   else if(reason_even == 1)  //4 New Down
+   if(reason_even == 1)  //4 New Down
        {
-         schedulerSetEventButtonDown();
+         //adding debounce
+         timerWaitUs_polled(30000); //wait for 50msec
+         if((GPIO_PinInGet(SW_PORT, SW_DOWN_PIN) == 1) && (gpio_inputs_enabled == true)) //0 means presseed
+             {
+             schedulerSetEventButtonUp();
+             }
+
+         //schedulerSetEventButtonUp();
        }
-   else if(reason_even == 4)
+   else if(reason_even == 4) //to be removed
        {
-               schedulerSetEventButtonBack();
-               mag_enc.clkwise_counter = 0;
-               mag_enc.counter_clkwise_counter = 0;
+         //adding debounce
+          timerWaitUs_polled(30000); //wait for 50msec
+          if((GPIO_PinInGet(SW_PORT, SW_UP_PIN) == 1) && (gpio_inputs_enabled == true)) //0 means presseed
+              {
+              schedulerSetEventButtonDown();
+              }
+
+           //schedulerSetEventButtonBack();
+
        }
 
 
@@ -443,14 +423,59 @@ void GPIO_ODD_IRQHandler(void) {
 
         CORE_EXIT_CRITICAL();
       }
+   else if(reason_odd == 32768) //Mag Enc Channel
+      {
+        CORE_DECLARE_IRQ_STATE;
+         CORE_ENTER_CRITICAL();
+        //setting initial direction of rotation
+        if(mag_enc.rotation_direction == NONE)
+          {
+            mag_enc.rotation_direction = CLK_WISE;
+          }
+
+        //checking if direction of rotation is changed
+        if(mag_enc.last_pulse == CHNL_A)
+          {
+            //change rotation direction;
+            if(mag_enc.rotation_direction == CLK_WISE)
+              mag_enc.rotation_direction = COUNTER_CLK_WISE;
+            else if(mag_enc.rotation_direction == COUNTER_CLK_WISE)
+              mag_enc.rotation_direction = CLK_WISE;
+          }
+        mag_enc.last_pulse = CHNL_A;
+
+        if(curr_lcd_screen != LCD_WHEEL_MEAS)
+        {
+            if(mag_enc.rotation_direction == CLK_WISE)
+            mag_enc.clkwise_counter++;
+            else if(mag_enc.rotation_direction == COUNTER_CLK_WISE)
+              mag_enc.counter_clkwise_counter++;
+        }
+        else
+        {
+            mag_enc.clkwise_counter++;
+        }
+
+
+        CORE_EXIT_CRITICAL();
+
+      }
 
     else if(reason_odd == 2)
      {
-       schedulerSetEventButtonUp();
+        //adding debounce
+        timerWaitUs_polled(60000); //wait for 50msec
+        if((GPIO_PinInGet(SW_PORT, SW_UP_PIN) == 1) && (gpio_inputs_enabled == true)) //0 means presseed
+            {
+            schedulerSetEventButtonSelect();
+            }
+        mag_enc.clkwise_counter = 0;
+        mag_enc.counter_clkwise_counter = 0;
+
      }
    else if(reason_odd == 8)  //8
      {
-       schedulerSetEventButtonSelect();//
+       //schedulerSetEventButtonSelect();//
      }
 }
 

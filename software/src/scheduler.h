@@ -67,7 +67,8 @@ typedef enum auto_update_display_e{
 
 enum unit{
   CM,
-  INCH
+  INCH,
+  DEG
 };
 
 typedef struct sensor_data_s{

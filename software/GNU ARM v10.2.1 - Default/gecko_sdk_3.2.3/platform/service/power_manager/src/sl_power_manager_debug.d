@@ -2,7 +2,7 @@ gecko_sdk_3.2.3/platform/service/power_manager/src/sl_power_manager_debug.o: \
  C\:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/service/power_manager/src/sl_power_manager_debug.c \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\power_manager\inc\sl_power_manager.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_power_manager_config.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_power_manager_config.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\em_device.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\efr32bg13p732f512gm48.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\cmsis\include\core_cm4.h \
@@ -61,13 +61,13 @@ gecko_sdk_3.2.3/platform/service/power_manager/src/sl_power_manager_debug.o: \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_core.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_common.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/emlib_core_debug_config.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/emlib_core_debug_config.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_slist.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_status.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\sleeptimer\inc\sl_sleeptimer.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_sleeptimer_config.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_sleeptimer_config.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_enum.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_emu.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_bus.h \
@@ -77,7 +77,7 @@ gecko_sdk_3.2.3/platform/service/power_manager/src/sl_power_manager_debug.o: \
  C\:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/service/power_manager/src/sli_power_manager_private.h
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\power_manager\inc\sl_power_manager.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_power_manager_config.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_power_manager_config.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\em_device.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\efr32bg13p732f512gm48.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\cmsis\include\core_cm4.h:
@@ -136,13 +136,13 @@ c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_core.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_common.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/emlib_core_debug_config.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/emlib_core_debug_config.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_slist.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_status.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\sleeptimer\inc\sl_sleeptimer.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_sleeptimer_config.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_sleeptimer_config.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_enum.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_emu.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_bus.h:

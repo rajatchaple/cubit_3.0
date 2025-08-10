@@ -12,7 +12,7 @@
 
 typedef enum lcd_screens_e
 {
-  LCD_FLASH_SCREEN,
+//  LCD_FLASH_SCREEN,
   LCD_MENU_LINEAR,
   LCD_MENU_ANGULAR,
   LCD_MENU_SETTINGS,
@@ -34,6 +34,7 @@ typedef enum lcd_screens_e
 
 void handle_lcd_menus(uint32_t event);
 void lcd_auto_update_display(void);
+void init_lcd_menu();
 
 
 #endif /* SRC_LCD_MENU_H_ */

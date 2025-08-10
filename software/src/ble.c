@@ -632,7 +632,7 @@ void handle_ble_event(sl_bt_msg_t *evt) {
 
       //LOG_INFO("connection close event\n\r");
 
-      gpioLed0SetOff();
+//      gpioLed0SetOff();
 
 //      displayPrintf(DISPLAY_ROW_9, "");
 //      displayPrintf(DISPLAY_ROW_TEMPVALUE, "");
@@ -783,7 +783,7 @@ void handle_ble_event(sl_bt_msg_t *evt) {
 //      draw_custom_graphics(menu_settings);
 //      draw_custom_graphics(Slide1);
 //      draw_custom_graphics_rectangle(Slide2);
-      displayUpdate();
+//      displayUpdate();
 
 #if DEVICE_IS_BLE_SERVER
       //check for any indications queued or if any indication is inFlight

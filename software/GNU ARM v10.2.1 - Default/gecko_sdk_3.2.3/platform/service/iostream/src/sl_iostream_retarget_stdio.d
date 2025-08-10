@@ -2,7 +2,7 @@ gecko_sdk_3.2.3/platform/service/iostream/src/sl_iostream_retarget_stdio.o: \
  C\:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/service/iostream/src/sl_iostream_retarget_stdio.c \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\iostream\inc\sl_iostream.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_status.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_enum.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\em_device.h \
@@ -63,7 +63,7 @@ gecko_sdk_3.2.3/platform/service/iostream/src/sl_iostream_retarget_stdio.o: \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\iostream\inc\sl_iostream.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_status.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_enum.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\device\siliconlabs\efr32bg13p\include\em_device.h:

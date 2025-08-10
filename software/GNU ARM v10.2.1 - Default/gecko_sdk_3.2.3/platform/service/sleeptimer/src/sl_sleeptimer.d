@@ -60,16 +60,16 @@ gecko_sdk_3.2.3/platform/service/sleeptimer/src/sl_sleeptimer.o: \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_core.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_common.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/emlib_core_debug_config.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/emlib_core_debug_config.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\sleeptimer\inc\sl_sleeptimer.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_sleeptimer_config.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_sleeptimer_config.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_status.h \
  C\:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/service/sleeptimer/src/sli_sleeptimer_hal.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\sleeptimer\inc\sli_sleeptimer.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_atomic.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\power_manager\inc\sl_power_manager.h \
- C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_power_manager_config.h \
+ C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_power_manager_config.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_slist.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h \
  c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_enum.h \
@@ -138,16 +138,16 @@ c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_core.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_common.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\autogen/sl_component_catalog.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/emlib_core_debug_config.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\autogen/sl_component_catalog.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/emlib_core_debug_config.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\sleeptimer\inc\sl_sleeptimer.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_sleeptimer_config.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_sleeptimer_config.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_status.h:
 C\:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/platform/service/sleeptimer/src/sli_sleeptimer_hal.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\sleeptimer\inc\sli_sleeptimer.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_atomic.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\service\power_manager\inc\sl_power_manager.h:
-C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\source\config/sl_power_manager_config.h:
+C\:\Users\rajat\OneDrive\Low\ Power\Project\github\ecen5833_s22_lpedt_project\software\cubit_software\config/sl_power_manager_config.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_slist.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\emlib\inc\em_assert.h:
 c\:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\platform\common\inc\sl_enum.h:

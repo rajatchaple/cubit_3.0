@@ -219,7 +219,7 @@ void init_leuart(void)
 //  GPIO_PinModeSet(gpioPortA, 3, gpioModePushPull, 1); // TX
   //GPIO_PinModeSet(gpioPortA, 5, gpioModeInput, 0);    // RX
 
-  GPIO_PinModeSet(gpioPortF, 7, gpioModeInput, 0);    // RX
+  GPIO_PinModeSet(gpioPortA, 5, gpioModeInput, 0);    // RX
 
 
 
@@ -248,7 +248,7 @@ void init_leuart(void)
 
   // Enable RX and TX for LEUART
   LEUART0->CTRL |= LEUART_CTRL_INV;
-  LEUART0->ROUTELOC0 = /*USART_ROUTELOC0_TXLOC_LOC3 | */USART_ROUTELOC0_RXLOC_LOC30;
+  LEUART0->ROUTELOC0 = /*USART_ROUTELOC0_TXLOC_LOC3 | */USART_ROUTELOC0_RXLOC_LOC4;
   LEUART0->ROUTEPEN |= USART_ROUTEPEN_RXPEN/* | USART_ROUTEPEN_TXPEN*/;
 
 
