@@ -69,6 +69,14 @@ void displayInit() {
         LOG_ERROR("Error in soft timer\n\r");
     }
 
+    int a = 5500000;
+    //workaround to automatically disappear welcome screen
+    while(a != 0)
+      {
+a--;
+      }
+    handle_lcd_menus(evt_Button_UP);
+
 //    gpioLcdSetOn();
 }
 
