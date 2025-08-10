@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Cubit3_main_pcb.PcbDoc   4/27/2025  7:51:19 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Cubit3_main_pcb-RoundHoles.TXT
+ASCII SlotHoles File : Cubit3_main_pcb-SlotHoles.TXT
+EIA File   : Cubit3_main_pcb.DRL
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.305mm)                                           Round             313       PTH        38.10inch (967.71mm)
+T2      20mil (0.5mm)                                             Slot              2         PTH        0.60inch (15.33mm)
+T3      22mil (0.55mm)                                            Slot              2         PTH        0.43inch (10.90mm)
+T4      43mil (1.1mm)                                             Round             20        PTH        6.74inch (171.08mm)
+T5      98mil (2.5mm)                                             Round             3         PTH        4.10inch (104.01mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              340
+
+Total Processing Time (hh:mm:ss) : 00:00:00

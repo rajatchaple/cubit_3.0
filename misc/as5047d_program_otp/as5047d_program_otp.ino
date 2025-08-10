@@ -84,6 +84,7 @@ void setup() {
       else
       {
         Serial.println("waiting for burn");
+        delay(5000);
       }
   }
 
@@ -105,7 +106,8 @@ void loop() {
   // Show the measure angle on the Serial Port
 //  Serial.println(angle);
 //  as5047d.writeSettings1(settings1);
+//  as5047d.readRegister(SETTINGS2_REG);
 //  as5047d.printDebugString();
   // Wait 1 second (1000 milliseconds) before reading again.
-  delay(3000);
+  delay(5000);
 }

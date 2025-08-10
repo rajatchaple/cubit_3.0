@@ -1,0 +1,14 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [lpedt_project_board_cubit.PrjPcb]
+   Generated File[Cubit3_main_pcb-RoundHoles.TXT]
+   Generated File[Cubit3_main_pcb-SlotHoles.TXT]
+   Generated File[Cubit3_main_pcb.DRL]
+   Generated File[Cubit3_main_pcb.LDP]
+   Generated File[Cubit3_main_pcb.DRR]
+
+
+Files Generated   : 5
+Documents Printed : 0
+
+Finished Output Generation At 7:51:19 PM On 4/27/2025
