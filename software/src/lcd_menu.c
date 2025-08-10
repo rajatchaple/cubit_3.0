@@ -319,7 +319,9 @@ void handle_lcd_menus(uint32_t event) {
                     drawImage(&about, 38-5, 400-34-56+4);
                     drawImage(&unit, 38-5, 400-96-33+4);
 //                    drawImage(&dot, 194, 400-107-15 + 8);
-                    drawImage(&dot, 194-5, 400-78-15 + 8);
+//                    drawImage(&dot, 194-5, 400-78-15 + 8);
+//                    clear_image(&dot, 194-15, 400-78-15 + 15);
+                    drawImage(&dot, 194-15, 400-78-15 + 15);
 
 
 
@@ -465,15 +467,15 @@ void handle_lcd_menus(uint32_t event) {
               }
                if(cursor_pos == 0)
                  {
-                   clear_image(&dot, 194-5, 400-122-15 + 8);
-                   drawImage(&dot, 194-5, 400-78-15 + 8);
+                   clear_image(&dot, 194-15, 400-122-15 + 15);
+                   drawImage(&dot, 194-15, 400-78-15 + 15);
                    back_enabled = false;
-                   clear_image(&inch, 95-5, 400-200-29); //inch being the widest, any unit with this would be cleared
+                   clear_image(&inch, 95-15, 400-200-29); //inch being the widest, any unit with this would be cleared
                  }
                else if(cursor_pos == 1)
                  {
-                   clear_image(&dot, 194-5, 400-78-15 + 8);
-                   drawImage(&dot, 194-5, 400-122-15 + 8);
+                   clear_image(&dot, 194-15, 400-78-15 + 15);
+                   drawImage(&dot, 194-15, 400-122-15 + 15);
                    back_enabled = false;
                    if(sensor_data->settings_unit == CM)
                     {
@@ -488,8 +490,8 @@ void handle_lcd_menus(uint32_t event) {
                  }
                else if(cursor_pos == 2)
                  {
-                   clear_image(&dot, 194-5, 400-78-15 + 8);
-                   clear_image(&dot, 194-5, 400-122-15 + 8);
+                   clear_image(&dot, 194-15, 400-78-15 + 15);
+                   clear_image(&dot, 194-15, 400-122-15 + 15);
                    back_enabled = true;
                    clear_image(&inch, 95-5, 400-200-29); //inch being the widest, any unit with this would be cleared
                  }
@@ -556,7 +558,7 @@ void handle_lcd_menus(uint32_t event) {
                         drawImage(&about, 38-5, 400-34-56+4);
                         drawImage(&unit, 38-5, 400-96-33+4);
     //                    drawImage(&dot, 194, 400-107-15 + 8);
-                        drawImage(&dot, 194-5, 400-78-15 + 8);
+                        drawImage(&dot, 194-15, 400-78-15 + 15);
 
                         drawImage(&bluetooth_icon, 156-5, 400-333-27+4);
                         drawImage(&battery_icon, 185-5, 400-334-25+4);
@@ -895,6 +897,7 @@ void handle_lcd_menus(uint32_t event)
       else if(event == evt_Button_SELECT)
       {
           sensor_data->angular_reading_to_be_saved = sensor_data->refreshing_angular_reading;
+          // Send angle as integer degrees
           ble_SendMeasurement(LCD_ANGULAR_MEAS, (float)((float)abs(sensor_data->angular_reading_to_be_saved)));
         //No action
       }

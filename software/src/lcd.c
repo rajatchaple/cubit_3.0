@@ -69,7 +69,7 @@ void displayInit() {
         LOG_ERROR("Error in soft timer\n\r");
     }
 
-    int a = 5500000;
+    int a = 7000000;
     //workaround to automatically disappear welcome screen
     while(a != 0)
       {

@@ -12,7 +12,11 @@ const ImageBitmap about = {
 };
 
 const ImageBitmap about_image = {
-    192, 180, about_image_bitmap
+    184, 176, about_image_bitmap
+};
+
+const ImageBitmap about_image_saloni = {
+    192, 180, about_image_saloni_bitmap
 };
 
 const ImageBitmap about_mini = {

@@ -15,14 +15,13 @@
 #define IMU_PWR_MODE 0x3E
 #define MAG_DATA_Z_LSB 0x12
 #define ACC_DATA_X_LSB 0x08
-#define EUL_DATA_Z_LSB 0x1E //PITCH
-#define EUL_DATA_Y_LSB 0x1C //ROLL
+#define EUL_DATA_Z_LSB 0x1E // PITCH
+#define EUL_DATA_Y_LSB 0x1C // ROLL
 #define EUL_DATA_X_LSB 0x1A
 
-
-
-//enum to define scheduler events
-typedef enum uint32_t {
+// enum to define scheduler events
+typedef enum uint32_t
+{
   state0_change_config_mode,
   state0_timer_wait_config,
   state0_start_imu,
@@ -48,7 +47,7 @@ typedef enum uint32_t {
   state3_set_indication,
   state4_wait_for_close,
   MY_NUM_STATES,
-}imu_state;
+} imu_state;
 
 void init_imu();
 
@@ -62,7 +61,7 @@ void imu_read_angle_MSB();
 
 void imu_init_state_machine(events_t);
 
-void imu_data_state_machine(events_t);  //(sl_bt_msg_t *evt);
+void imu_data_state_machine(events_t); //(sl_bt_msg_t *evt);
 
 void imu_turnoff_state_machine(events_t);
 
